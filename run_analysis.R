@@ -55,3 +55,6 @@ names(tidy_data)<-gsub("gravity", "Gravity", names(tidy_data))
 
 #summarising the data
 summary_data <- aggregate(tidy_data[, !c("activity", "subject_id")], list(tidy_data$subject_id, tidy_data$activity), mean)
+
+#saving the final data
+write.csv(summary_data, file="FinalData.txt")
